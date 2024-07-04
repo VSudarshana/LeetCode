@@ -1,12 +1,12 @@
 class Solution {
-    public boolean checkIfPangram(String sentence) {
-    sentence = sentence.toLowerCase();
-    Set<Character> letters = new HashSet<>();
-    for(char ch : sentence.toCharArray()){
-        if(ch>='a'&&ch<='z'){
-            letters.add(ch);
+    public boolean checkIfPangram(String s) {
+
+        for (char c = 'a'; c <= 'z'; c++) {
+            if (!s.contains(s.valueOf(c)))
+                return false;
         }
-    }
-        return letters.size()==26;
+
+        return true;
+
     }
 }
